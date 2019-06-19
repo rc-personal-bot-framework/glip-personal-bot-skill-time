@@ -1,6 +1,6 @@
 {
   "name": "glip-personal-bot-skill-time",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple time bot skill for ringcentral-personal-chatbot-js which respond to 'time' command with user's time and timezone that can be set service web",
   "main": "dist/server/index.js",
   "scripts": {
@@ -26,10 +26,6 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
