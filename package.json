@@ -1,0 +1,63 @@
+{
+  "name": "glip-personal-bot-skill-time",
+  "version": "0.1.0",
+  "description": "Simple time bot skill for ringcentral-personal-chatbot-js which respond to 'time' command with user's time and timezone that can be set service web",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "ngrok": "ngrok http -region ap 4100",
+    "start": "node -r @babel/register ./node_modules/.bin/rcpf build/test-bot.js",
+    "c": "webpack-dev-server --open --progress --colors --config build/webpack.config.babel.js",
+    "compile": "babel src/server --out-dir dist/server",
+    "p": "node ./node_modules/.bin/rcpf build/test-bot.js",
+    "build": "npm run clean && npm run compile",
+    "clean": "node build/clean.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "RingCentral",
+    "Chatbot",
+    "Glip",
+    "personal",
+    "time",
+    "timezone"
+  ],
+  "author": "Drake Zhao <drake.zhao@ringcentral.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "ngrok": "^3.1.0",
+    "serverless": "^1.35.1",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "peerDependencies": {
+    "ringcentral-personal-chatbot": "^0.5.0"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "/dist/",
+      "/temp/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time/issues"
+  },
+  "homepage": "https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time#readme"
+}
