@@ -26,7 +26,7 @@ export const onPostAdd = async ({
     return false
   }
   let { timezone } = info.data.regionalSettings
-  let now = moment().utcOffset(timezone.bias).format('YYYY MMMM DD HH:mm')
+  let now = moment().utcOffset(timezone.bias).format('YYYY MMMM DD HH:mm A')
   let zone = `, timezone: **${timezone.name}**`
   let tip = `\nTip: timezone can be set in [service web](https://service.ringcentral.com)`
   await user.sendMessage(group.id, {
