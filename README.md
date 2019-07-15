@@ -1,6 +1,6 @@
 # glip-personal-bot-skill-time
 
-Simple time bot skill for [ringcentral-personal-chatbot-js](https://github.com/rc-personal-bot-framework/ringcentral-personal-chatbot-js) Respond to "time" command with user\'s time and timezone that can be set service web.
+Simple time bot skill for [ringcentral-personal-chatbot-js](https://github.com/ringcentral/ringcentral-personal-chatbot-js) Respond to "time" command with user\'s time and timezone that can be set service web.
 
 ![ ](screenshots/s1.png)
 
