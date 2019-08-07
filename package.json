@@ -1,6 +1,6 @@
 {
   "name": "glip-personal-bot-skill-time",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Simple time bot skill for ringcentral-personal-chatbot-js which respond to 'time' command with user's time and timezone that can be set service web",
   "main": "dist/server/index.js",
   "scripts": {
