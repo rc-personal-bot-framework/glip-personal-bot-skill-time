@@ -7,7 +7,7 @@ export const homepage = RINGCENTRAL_CHATBOT_SERVER
   : 'https://github.com/rc-personal-bot-framework/ringcentral-personal-chatbot-skill-faq#readme'
 
 export const name = 'Glip Personal Bot skill: Time'
-export const description = 'Respond to "time" command with user\'s time and timezone which can be set service web'
+export const description = 'Respond to "time" command with user\'s time and timezone which can be set in service web'
 
 export const onPostAdd = async ({
   // text, // original text
