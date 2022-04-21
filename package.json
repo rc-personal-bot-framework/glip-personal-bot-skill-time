@@ -1,6 +1,6 @@
 {
   "name": "glip-personal-bot-skill-time",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "Simple time bot skill for ringcentral-personal-chatbot-js which respond to 'time' command with user's time and timezone that can be set service web",
   "main": "dist/server/index.js",
   "scripts": {
@@ -11,7 +11,9 @@
     "p": "node ./node_modules/.bin/rcpf build/test-bot.js",
     "build": "npm run clean && npm run compile",
     "clean": "node build/clean.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "lint": "./node_modules/.bin/standard",
+    "fix": "./node_modules/.bin/standard --fix"
   },
   "keywords": [
     "RingCentral",
@@ -24,22 +26,21 @@
   "author": "Drake Zhao <drake.zhao@ringcentral.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/register": "^7.0.0",
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.9",
+    "@babel/preset-env": "7.16.11",
+    "@babel/register": "7.17.7",
     "babel-eslint": "^10.0.1",
-    "cross-env": "^5.2.0",
+    "dotenv": "^16.0.0",
     "ngrok": "^3.1.0",
-    "serverless": "^1.35.1",
-    "shelljs": "^0.8.3",
-    "standard": "^12.0.1"
+    "shelljs": "0.8.5",
+    "standard": "16.0.4"
   },
   "dependencies": {
-    "moment": "^2.24.0"
+    "dayjs": "^1.11.1"
   },
   "peerDependencies": {
-    "ringcentral-personal-chatbot": "^0.9.9"
+    "ringcentral-personal-chatbot": "^1.0.3"
   },
   "standard": {
     "parser": "babel-eslint",
@@ -55,5 +56,9 @@
   "bugs": {
     "url": "https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time/issues"
   },
-  "homepage": "https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time#readme"
+  "homepage": "https://github.com/rc-personal-bot-framework/glip-personal-bot-skill-time#readme",
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }

@@ -1,4 +1,6 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
+const utc = require('dayjs/plugin/utc')
+dayjs.extend(utc)
 
 const { RINGCENTRAL_CHATBOT_SERVER, SERVER_HOME = '/' } = process.env
 const appHome = RINGCENTRAL_CHATBOT_SERVER + SERVER_HOME
@@ -23,18 +25,23 @@ export const onPostAdd = async ({
   if (textFiltered !== 'time') {
     return false
   }
-  let sign = shouldUseSignature
+  const sign = shouldUseSignature
     ? `\n(send by [${exports.name}](${exports.homepage}))`
     : ''
-  let info = await user.rc.get('/restapi/v1.0/account/~/extension/~')
-  if (!info || !info.data) {
-    console.error('fetch user info fails')
+  const rc = await user.rc()
+  const info = await rc.get('/restapi/v1.0/account/~/extension/~')
+    .then(d => d.data)
+    .catch(err => {
+      console.error('fetch user info fails')
+      console.log(err)
+    })
+  if (!info) {
     return false
   }
-  let { timezone } = info.data.regionalSettings
-  let now = moment().utc().utcOffset(Number(timezone.bias)).format('YYYY MMMM DD HH:mm A')
-  let zone = `, timezone: **${timezone.name}**`
-  let tip = `\nTip: timezone can be set in [service web](https://service.ringcentral.com)`
+  const { timezone } = info.regionalSettings
+  const now = dayjs().utc().utcOffset(Number(timezone.bias)).format('YYYY MMMM DD HH:mm A')
+  const zone = `, timezone: **${timezone.name}**`
+  const tip = '\nTip: timezone can be set in [service web](https://service.ringcentral.com)'
   await user.sendMessage(group.id, {
     text: `My current time is **${now}**${zone}${tip}${sign}`
   })
